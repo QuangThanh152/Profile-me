@@ -97,7 +97,7 @@ body {
     border-radius: 10px;
     color: #e66767;
     margin-top: 10px;
-    font-weight: 900;
+    font-weight: 800;
 }
 .btn-contact:hover {
     background-color: #e66767;
@@ -143,6 +143,5 @@ body {
 .item span {
     display: block;
     font-size: 25px;
-    font-weight: 600;
     color: #2c3a47;
 }
