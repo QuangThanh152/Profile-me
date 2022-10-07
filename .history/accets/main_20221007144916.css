@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    background: url(/accets/img/img-big.jpg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    /* height: 500px; */
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    transition: 0.2s linear;
+
+}
+.card:hover {
+    height: 500px;
+}
+.card-header {
+    position: absolute;
+    background: #fff;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+    width: 150px;
+    border-radius: 20px;
+}
+
+.img-me {
+
+}
