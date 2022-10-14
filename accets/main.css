@@ -8,7 +8,7 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(45deg, #dcf1e7, #57f12d);
+    background: linear-gradient(360deg, #151715, #15062f, #163715,#2e2b30);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,6 +26,37 @@ body {
 .card:hover {
     height: 550px;
 }
+.card .lines {
+    position: absolute;
+    background: #000;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.card .lines::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 120px;
+    animation: animate 4s linear infinite;
+    background: linear-gradient(transparent, #45f3ff, #45f3ff, #45f3ff, transparent);
+}
+@keyframes animate {
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+.card .lines::after {
+    position: absolute;
+    content: "";
+    inset: 4px;
+    background: #292929;
+}
 .card-header {
     position: absolute;
     background: rgb(21, 19, 19);
@@ -34,23 +65,52 @@ body {
     transform: translateX(-50%);
     width: 200px;
     height: 180px;
+    z-index: 10;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+    transition: 0.5s;
     overflow: hidden;
-    transition: 0.3s;
+}
+.card .card-header::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent);
+    animation: animate2 6s linear infinite;
+}
+@keyframes animate2 {
+    0%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+.card .card-header::after {
+    position: absolute;
+    content: "";
+    inset: 3px;
+    background: #292929;
 }
 .card:hover .card-header {
     width: 250px;
     height: 250px;
     transition: 0.2s;
 }
-.img-me {
+.card .card-header .img-me {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    z-index: 1;
     object-fit: cover;
+    border-radius: 20px;
+    filter:blur(1);
 }
 .content {
     position: absolute;
